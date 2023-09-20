@@ -1,0 +1,24 @@
+﻿name: Release
+
+on:
+  push:
+    tags: [v*]
+
+jobs:
+  # ClickOnce로 직접 배포하기 위한 빌드입니다.
+  release-clickonce:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Git
+        run: |
+          git config --global url."https://potados99:${{ secrets.PAT }}@github.com".insteadOf "https://github.com"
+          git config --global user.name potados99
+          git config --global user.email potados99@gmail.com        
+
+      - name: Run release script
+        shell: pwsh
+        run: ./release.ps1 -ClickOnce

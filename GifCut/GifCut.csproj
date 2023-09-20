@@ -2,9 +2,11 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0-windows</TargetFramework>
-        <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <PlatformTarget>x64</PlatformTarget>
+        <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
 </Project>
