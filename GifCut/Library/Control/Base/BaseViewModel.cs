@@ -1,4 +1,4 @@
-﻿// App.xaml.cs
+﻿// BaseViewModel.cs
 // 이 파일은 GifCut의 일부입니다.
 // 
 // © 2023 Potados <song@potados.com>
@@ -14,34 +14,18 @@
 // 라이센스 전문은 이 프로그램과 함께 제공되었을 것입니다. 만약 아니라면,
 // 다음 링크에서 받아볼 수 있습니다: <https://www.gnu.org/licenses/gpl-3.0.txt>
 
-using System;
-using System.Windows;
-using GifCut.Library;
-using GifCut.Library.Extensions;
-using GifCut.Library.Utility;
+namespace GifCut.Library.Control.Base;
 
-namespace GifCut;
-
-public partial class App
+/// <summary>
+/// 라이프사이클 이벤트를 가지는 모델입니다.
+/// </summary>
+public abstract class BaseViewModel : BaseModel
 {
-    private log4net.ILog Logger => this.GetLogger();
-    
-    [STAThread]
-    public static void Main()
+    public virtual void OnInitialize()
     {
-        var application = new App();
-        application.InitializeComponent();
-        application.Run();
     }
-    
-    protected override void OnStartup(StartupEventArgs e)
-    {
-        base.OnStartup(e);
-        Logger.Info("앱을 시작합니다.");
-        
-        Modules.Initialize();
-        Logger.Info("의존성 주입기를 초기화하였습니다.");
 
-        new AppCenterCrashes().SetupExceptionHandler();
+    public virtual void OnLoaded()
+    {
     }
 }
