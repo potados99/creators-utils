@@ -43,5 +43,6 @@ public partial class App
         Logger.Info("의존성 주입기를 초기화하였습니다.");
 
         new AppCenterCrashes().SetupExceptionHandler();
+        Logger.Info("AppCenter Crashes를 설정하였습니다.");
     }
 }
