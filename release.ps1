@@ -111,6 +111,7 @@ if ($ClickOnce)
     git clone $distRepo --depth 1 "distribution"
 
     # 현재 프로젝트 디렉토리에 들어갑니다.
+    mkdir -Force "distribution/$appName"
     Push-Location "distribution/$appName"
 
     # CRLF만 사용하도록 바꿉니다.
