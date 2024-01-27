@@ -1,9 +1,9 @@
 ﻿// BaseViewModel.cs
-// 이 파일은 GifCut의 일부입니다.
+// 이 파일은 CreatorsUtils의 일부입니다.
 // 
-// © 2023 Potados <song@potados.com>
+// © 2024 Potados <song@potados.com>
 // 
-// GifCut은(는) 자유 소프트웨어입니다.
+// CreatorsUtils은(는) 자유 소프트웨어입니다.
 // GNU General Public License v3.0을 준수하는 범위 내에서
 // 누구든지 자유롭게 변경, 수정하거나 배포할 수 있습니다.
 // 
@@ -14,7 +14,7 @@
 // 라이센스 전문은 이 프로그램과 함께 제공되었을 것입니다. 만약 아니라면,
 // 다음 링크에서 받아볼 수 있습니다: <https://www.gnu.org/licenses/gpl-3.0.txt>
 
-namespace GifCut.Library.Control.Base;
+namespace CreatorsUtils.Library.Control.Base;
 
 /// <summary>
 /// 라이프사이클 이벤트를 가지는 모델입니다.

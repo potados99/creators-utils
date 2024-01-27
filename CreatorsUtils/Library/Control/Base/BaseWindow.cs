@@ -1,9 +1,9 @@
 ﻿// BaseWindow.cs
-// 이 파일은 GifCut의 일부입니다.
+// 이 파일은 CreatorsUtils의 일부입니다.
 // 
-// © 2023 Potados <song@potados.com>
+// © 2024 Potados <song@potados.com>
 // 
-// GifCut은(는) 자유 소프트웨어입니다.
+// CreatorsUtils은(는) 자유 소프트웨어입니다.
 // GNU General Public License v3.0을 준수하는 범위 내에서
 // 누구든지 자유롭게 변경, 수정하거나 배포할 수 있습니다.
 // 
@@ -15,9 +15,9 @@
 // 다음 링크에서 받아볼 수 있습니다: <https://www.gnu.org/licenses/gpl-3.0.txt>
 
 using System.Windows;
-using GifCut.Library.Extensions;
+using CreatorsUtils.Library.Extensions;
 
-namespace GifCut.Library.Control.Base;
+namespace CreatorsUtils.Library.Control.Base;
 
 /// <summary>
 /// 뷰 모델과 라이프사이클 이벤트를 가지는 윈도우입니다.

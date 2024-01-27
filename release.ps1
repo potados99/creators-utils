@@ -26,8 +26,8 @@ param (
     [switch]$Artifact # Release에 빌드 결과물을 올릴지 여부입니다.
 )
 
-$appName = "GifCut" # 앱 이름입니다. 아래에서 ClickOnce 배포 디렉토리의 이름으로 사용됩니다.
-$projDir = "GifCut" # 프로젝트 폴더 이름입니다. 빌드할 프로젝트 경로를 찾을 때에 사용됩니다.
+$appName = "CreatorsUtils" # 앱 이름입니다. 아래에서 ClickOnce 배포 디렉토리의 이름으로 사용됩니다.
+$projDir = "CreatorsUtils" # 프로젝트 폴더 이름입니다. 빌드할 프로젝트 경로를 찾을 때에 사용됩니다.
 $distRepo = "https://github.com/potados99/distribution.git" # ClickOnce 배포용 저장소의 이름입니다.
 
 Set-StrictMode -version 2.0

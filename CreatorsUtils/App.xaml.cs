@@ -1,9 +1,9 @@
 ﻿// App.xaml.cs
-// 이 파일은 GifCut의 일부입니다.
+// 이 파일은 CreatorsUtils의 일부입니다.
 // 
-// © 2023 Potados <song@potados.com>
+// © 2024 Potados <song@potados.com>
 // 
-// GifCut은(는) 자유 소프트웨어입니다.
+// CreatorsUtils은(는) 자유 소프트웨어입니다.
 // GNU General Public License v3.0을 준수하는 범위 내에서
 // 누구든지 자유롭게 변경, 수정하거나 배포할 수 있습니다.
 // 
@@ -16,11 +16,11 @@
 
 using System;
 using System.Windows;
-using GifCut.Library;
-using GifCut.Library.Extensions;
-using GifCut.Library.Utility;
+using CreatorsUtils.Library;
+using CreatorsUtils.Library.Extensions;
+using CreatorsUtils.Library.Utility;
 
-namespace GifCut;
+namespace CreatorsUtils;
 
 public partial class App
 {

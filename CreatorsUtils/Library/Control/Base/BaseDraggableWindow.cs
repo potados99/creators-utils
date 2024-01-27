@@ -1,9 +1,9 @@
 ﻿// BaseDraggableWindow.cs
-// 이 파일은 GifCut의 일부입니다.
+// 이 파일은 CreatorsUtils의 일부입니다.
 // 
-// © 2023 Potados <song@potados.com>
+// © 2024 Potados <song@potados.com>
 // 
-// GifCut은(는) 자유 소프트웨어입니다.
+// CreatorsUtils은(는) 자유 소프트웨어입니다.
 // GNU General Public License v3.0을 준수하는 범위 내에서
 // 누구든지 자유롭게 변경, 수정하거나 배포할 수 있습니다.
 // 
@@ -18,7 +18,7 @@ using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace GifCut.Library.Control.Base;
+namespace CreatorsUtils.Library.Control.Base;
 
 /// <summary>
 /// 드래그와 클릭을 둘 다 지원하는 윈도우 컨트롤입니다.

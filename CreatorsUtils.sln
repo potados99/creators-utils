@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GifCut", "GifCut\GifCut.csproj", "{34C54712-8DFA-40AE-B878-A7220CD8FC50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatorsUtils", "CreatorsUtils\CreatorsUtils.csproj", "{34C54712-8DFA-40AE-B878-A7220CD8FC50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
