@@ -4,5 +4,6 @@
     &lt;TestId&gt;xUnit::7692F1D5-CF4F-4E09-8701-6253D0497D20::net6.0::CoreTests.AdderTest.Adder_InputIs1And2_Return3&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::7692F1D5-CF4F-4E09-8701-6253D0497D20::net6.0::CoreTests.RegexGeneratorTest.Run&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::7692F1D5-CF4F-4E09-8701-6253D0497D20::net6.0::CoreTests.PatternReplacerTest.Replace_ShouldUnderstandNamedGroups&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::7692F1D5-CF4F-4E09-8701-6253D0497D20::net6.0::CoreTests.Finder.HwpFileDecoderTest.OnDecode_ShouldDecodeHwpFile&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

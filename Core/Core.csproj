@@ -5,9 +5,19 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-
+    
     <ItemGroup>
-      <Folder Include="Finder\" />
+      <PackageReference Include="IKVM" Version="8.7.5" />
+      <PackageReference Include="Lucene.Net" Version="4.8.0-beta00016" />
+      <PackageReference Include="Lucene.Net.Analysis.Common" Version="4.8.0-beta00016" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <IkvmReference Include="Resources\hwplib-1.1.4.jar">
+            <AssemblyName>hwplib</AssemblyName>
+            <AssemblyVersion>1.1.4.0</AssemblyVersion>
+            <AssemblyFileVersion>1.1.4.0</AssemblyFileVersion>
+        </IkvmReference>
     </ItemGroup>
 
 </Project>
