@@ -18,11 +18,14 @@ namespace Core.Finder;
 
 public abstract class FileDecoder : ProgressEmitter
 {
-    public FileInfo Decode(string from, string to)
+    public FileInfo Decode(string path)
     {
-        OnDecode(from, to);
-        return new FileInfo(to);
+        var decodedPath = GenerateDecodedFilePath(path);
+        OnDecode(path, decodedPath);
+        return new FileInfo(decodedPath);
     }
 
+    protected abstract string GenerateDecodedFilePath(string path);
+    
     protected abstract void OnDecode(string from, string to);
 }

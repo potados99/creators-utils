@@ -19,49 +19,32 @@ using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Documents.Extensions;
 using Lucene.Net.Index;
+using Lucene.Net.QueryParsers.Classic;
 using Lucene.Net.Search;
+using Lucene.Net.Search.Highlight;
 using Lucene.Net.Store;
 using Lucene.Net.Util;
 
 namespace Core.Finder;
 
-public class FileIndexer<T> where T : FileDecoder, new()
+public class FileIndexer : LuceneComponent
 {
-    private readonly FSDirectory _dir;
-    private readonly IndexWriter _writer;
-    private readonly IndexReader _reader;
-    private readonly IndexSearcher _searcher;
-
-    public FileIndexer()
-    {
-        const LuceneVersion AppLuceneVersion = LuceneVersion.LUCENE_48;
-
-        var basePath = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-        var indexPath = Path.Combine(basePath, "index");
-
-        var analyzer = new StandardAnalyzer(AppLuceneVersion);
-        var indexConfig = new IndexWriterConfig(AppLuceneVersion, analyzer);
-        indexConfig.OpenMode = OpenMode.CREATE_OR_APPEND;
-        
-        _dir = FSDirectory.Open(indexPath);
-        _writer = new IndexWriter(_dir, indexConfig);
-        _reader = _writer.GetReader(applyAllDeletes: false);
-        _searcher = new IndexSearcher(_reader);
-    }
-
-    ~FileIndexer()
-    {
-        Close();
-    }
-
     public void Index(string path)
     {
         Index(new FileInfo(path));
     }
-    
-    public void Index(FileInfo original)
+
+    public void Index(FileInfo file)
     {
-        using var reader = _writer.GetReader(applyAllDeletes: true);
+        if (!IsIndexed(file))
+        {
+            PerformIndex(file);
+        }
+    }
+
+    private bool IsIndexed(FileInfo original)
+    {
+        using var reader = Writer.GetReader(applyAllDeletes: true);
         var searcher = new IndexSearcher(reader);
         var results = searcher.Search(new TermQuery(new Term("path", original.FullName)), 1);
         if (results.TotalHits > 0)
@@ -70,41 +53,55 @@ public class FileIndexer<T> where T : FileDecoder, new()
             var modified = found.GetField("modified").GetInt64ValueOrDefault();
             if (modified >= original.LastWriteTimeUtc.Ticks)
             {
-                // 이미 해당 파일에 대해 최신 인덱스가 존재합니다.
-                // 따라서 패스합니다.
-                Console.Out.WriteLine($"Already indexed: {original.FullName}");
-                return;
+                return true;
             }
         }
-        else
-        {
-            Console.Out.WriteLine($"Nothing found.");
-        }
 
-        Console.Out.WriteLine($"Indexing: {original.FullName}");
-        
-        var decoded = new T().Decode(original.FullName, Path.Combine(original.DirectoryName ?? "", $".{original.Name}.txt"));
+        return false;
+    }
 
-        var doc = new Document();
+    private void PerformIndex(FileInfo original)
+    {
+        var decoded = GetDecoder(original).Decode(original.FullName);
 
         using var fs = new FileStream(decoded.FullName, FileMode.Open, FileAccess.Read);
-
-        doc.Add(new StringField("path", original.FullName, Field.Store.YES));
-        doc.Add(new Int64Field("modified", original.LastWriteTimeUtc.Ticks, Field.Store.YES));
-        doc.Add(new TextField("contents", new StreamReader(fs, Encoding.UTF8)));
-
-        _writer.UpdateDocument(new Term("path", original.FullName), doc);
-
-        _writer.Flush(triggerMerge: false, applyAllDeletes: false);
+        var doc = new Document
+        {
+            new StringField("path", original.FullName, Field.Store.YES),
+            new Int64Field("modified", original.LastWriteTimeUtc.Ticks, Field.Store.YES),
+            new TextField("contents", new StreamReader(fs, Encoding.UTF8))
+        };
         
+        Writer.UpdateDocument(new Term("path", original.FullName), doc);
+        Writer.Flush(triggerMerge: false, applyAllDeletes: false);
+
         decoded.Delete();
     }
 
-    public void Close()
+    private FileDecoder GetDecoder(FileInfo file)
     {
-        _writer.Dispose();
+        var extension = file.Extension.ToLower();
+
+        return extension switch
+        {
+            ".hwp" => new HwpFileDecoder(),
+            _ => throw new NotSupportedException($"Extension {extension} is not supported.")
+        };
+    }
+
+    public TopDocs Search(string keyword, int maxResults = 10)
+    {
+        using var reader = Writer.GetReader(applyAllDeletes: true);
+        var searcher = new IndexSearcher(reader);
+        var analyzer = new StandardAnalyzer(LuceneVersion.LUCENE_48);
+        var queryParser = new QueryParser(LuceneVersion.LUCENE_48, "contents", analyzer);
+        var query = queryParser.Parse(keyword);
         
-        _dir.Dispose();
-        _reader.Dispose();
+        return searcher.Search(query, maxResults);;
+    }
+
+    public Document GetDocument(int docId)
+    {
+        return Writer.GetReader(applyAllDeletes: true).Document(docId);
     }
 }

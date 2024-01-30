@@ -20,21 +20,33 @@ using Xunit.Abstractions;
 
 namespace CoreTests.Finder;
 
-public class HwpFileDecoderTest
+public class FileIndexerTest
 {
-    public HwpFileDecoderTest(ITestOutputHelper output)
+    public FileIndexerTest(ITestOutputHelper output)
     {
         Console.SetOut(new ConsoleWriter(output));
     }
+    
+    [Fact]
+    public void Index_ShouldIndex()
+    {
+        using var indexer = new FileIndexer();
+        
+        indexer.Index(@"C:\Users\Administrator\Desktop\모든 국민은 신속한 재판을 받을 권리를.hwp");
+        indexer.Index(@"C:\Users\Administrator\Desktop\국가는 주택개발정책등을 통하여.hwp");
+    }
 
     [Fact]
-    public void OnDecode_ShouldDecodeHwpFile()
+    public void Search_ShouldFind()
     {
-        var indexer = new FileIndexer<HwpFileDecoder>();
-         
-        indexer.Index(@"C:\Users\Administrator\Desktop\모든 국민은 신속한 재판을 받을 권리를.hwp");
-        indexer.Index(@"C:\Users\Administrator\Desktop\모든 국민은 신속한 재판을 받을 권리를.hwp");
-
-        indexer.Close();
+        using var indexer = new FileIndexer();
+        
+        var results = indexer.Search("는 6년으로");
+        Console.WriteLine($"{results.ScoreDocs.Length} results found.");
+        foreach (var result in results.ScoreDocs)
+        {  
+            var doc = indexer.GetDocument(result.Doc);
+            Console.WriteLine($"Score: {result.Score}, Path: {doc.GetField("path").GetStringValue()}");
+        }
     }
 }

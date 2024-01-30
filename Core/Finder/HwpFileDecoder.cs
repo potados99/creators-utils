@@ -20,8 +20,16 @@ namespace Core.Finder;
 
 public class HwpFileDecoder : FileDecoder
 {
-    protected override void OnDecode(string from, string to)
+    protected override string GenerateDecodedFilePath(string path)
     {
+        return Path.Combine(
+            Path.GetDirectoryName(path) ?? "",
+            $".{Path.GetFileName(path)}.txt"
+        );
+    }
+    
+    protected override void OnDecode(string from, string to)
+    { 
         Converter.convert(from, to);
     }
 }
