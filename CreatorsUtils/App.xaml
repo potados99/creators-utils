@@ -1,8 +1,13 @@
 ﻿<Application x:Class="CreatorsUtils.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="/Features/Capture/MainWindow.xaml">
+             StartupUri="/Features/Main/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CreatorsUtils;Component/Resources/Brushes.xaml"/>
+                <ResourceDictionary Source="/CreatorsUtils;Component/Resources/icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

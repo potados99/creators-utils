@@ -1,4 +1,4 @@
-﻿// MainWindow.xaml.cs
+﻿// MainViewModel.cs
 // 이 파일은 CreatorsUtils의 일부입니다.
 // 
 // © 2024 Potados <song@potados.com>
@@ -16,17 +16,8 @@
 
 using CreatorsUtils.Library.Control.Base;
 
-namespace CreatorsUtils.Features.Capture;
+namespace CreatorsUtils.Features.Main;
 
-public partial class MainWindow
+public class MainViewModel : BaseViewModel
 {
-    protected override void OnInitialize()
-    {
-        
-    }
-}
-
-public abstract class MainViewModelWindow : BaseDraggableWindow<MainViewModel>
-{
-    
 }

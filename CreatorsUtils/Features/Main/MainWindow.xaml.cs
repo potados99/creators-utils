@@ -1,4 +1,4 @@
-﻿// MainViewModel.cs
+﻿// MainWindow.xaml.cs
 // 이 파일은 CreatorsUtils의 일부입니다.
 // 
 // © 2024 Potados <song@potados.com>
@@ -14,10 +14,30 @@
 // 라이센스 전문은 이 프로그램과 함께 제공되었을 것입니다. 만약 아니라면,
 // 다음 링크에서 받아볼 수 있습니다: <https://www.gnu.org/licenses/gpl-3.0.txt>
 
+using System.Windows;
 using CreatorsUtils.Library.Control.Base;
 
-namespace CreatorsUtils.Features.Capture;
+namespace CreatorsUtils.Features.Main;
 
-public class MainViewModel : BaseViewModel
+public partial class MainWindow
 {
+    protected override void OnInitialize()
+    {
+        
+    }
+
+    private void OnMinimizeButtonClick(object sender, RoutedEventArgs e)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void OnCloseButtonClick(object sender, RoutedEventArgs e)
+    {
+        throw new System.NotImplementedException();
+    }
+}
+
+public abstract class MainViewModelWindow : BaseDraggableWindow<MainViewModel>
+{
+    
 }

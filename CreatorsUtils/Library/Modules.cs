@@ -15,7 +15,7 @@
 // 다음 링크에서 받아볼 수 있습니다: <https://www.gnu.org/licenses/gpl-3.0.txt>
 
 using System;
-using CreatorsUtils.Features.Capture;
+using CreatorsUtils.Features.Main;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CreatorsUtils.Library;
