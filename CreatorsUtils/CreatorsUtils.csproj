@@ -33,4 +33,15 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Resources\ic_bulk_rename.png" />
+      <Content Include="Resources\ic_bulk_rename.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Resources\ic_search_words.png" />
+      <Content Include="Resources\ic_search_words.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
