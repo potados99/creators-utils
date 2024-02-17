@@ -15,6 +15,8 @@
 // 다음 링크에서 받아볼 수 있습니다: <https://www.gnu.org/licenses/gpl-3.0.txt>
 
 using System.Windows;
+using CreatorsUtils.Features.Rename;
+using CreatorsUtils.Features.Search;
 using CreatorsUtils.Library.Control.Base;
 
 namespace CreatorsUtils.Features.Main;
@@ -34,6 +36,16 @@ public partial class MainWindow
     private void OnCloseButtonClick(object sender, RoutedEventArgs e)
     {
         Close();
+    }
+
+    private void OnRenameButtonClick(object sender, RoutedEventArgs e)
+    {
+        new RenameWindow().Show();
+    }
+
+    private void OnSearchButtonClick(object sender, RoutedEventArgs e)
+    {
+        new SearchWindow().Show();
     }
 }
 

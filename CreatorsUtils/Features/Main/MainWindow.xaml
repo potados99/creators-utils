@@ -8,8 +8,7 @@
                           WindowStyle="None"
                           AllowsTransparency="True"
                           Background="{StaticResource Window.Background}"
-                          Topmost="True"
-                          Title="Gif Cut"
+                          Title="Creator's utility tools"
                           Height="400"
                           Width="600">
 
@@ -198,14 +197,14 @@
                             </StackPanel.Resources> 
                             
                             <StackPanel Orientation="Vertical">
-                                <Button Width="120" Height="120" Background="#333" Style="{StaticResource MainButtonStyle}">
+                                <Button Width="120" Height="120" Background="#333" Style="{StaticResource MainButtonStyle}" Click="OnRenameButtonClick">
                                     <Image Source="pack://siteoforigin:,,/../../Resources/ic_bulk_rename.png" Margin="16"></Image>
                                 </Button>
                                 <Label Content="제목 일괄 변경" Foreground="#BBB" HorizontalAlignment="Center"></Label>
                             </StackPanel>
                             
                             <StackPanel Orientation="Vertical">
-                                <Button Width="120" Height="120" Background="#333" Style="{StaticResource MainButtonStyle}">
+                                <Button Width="120" Height="120" Background="#333" Style="{StaticResource MainButtonStyle}" Click="OnSearchButtonClick">
                                     <Image Source="pack://siteoforigin:,,/../../Resources/ic_search_words.png" Margin="16"></Image>
                                 </Button>
                                 <Label Content="단어 일괄 탐색" Foreground="#BBB" HorizontalAlignment="Center"></Label>
