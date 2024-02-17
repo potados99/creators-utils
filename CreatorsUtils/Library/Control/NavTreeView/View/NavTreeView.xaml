@@ -44,7 +44,7 @@
   
   <TreeView
     BorderThickness="0"
-    Background="#FF323435"
+    Background="{StaticResource Window.Background}"
     ItemsSource="{Binding Path=RootChildren}"
     ItemTemplate="{StaticResource NavTreeTempl}" >
         
