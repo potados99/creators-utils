@@ -28,12 +28,12 @@ public partial class MainWindow
 
     private void OnMinimizeButtonClick(object sender, RoutedEventArgs e)
     {
-        throw new System.NotImplementedException();
+        WindowState = WindowState.Minimized;
     }
 
     private void OnCloseButtonClick(object sender, RoutedEventArgs e)
     {
-        throw new System.NotImplementedException();
+        Close();
     }
 }
 
