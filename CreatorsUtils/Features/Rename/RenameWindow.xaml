@@ -173,8 +173,27 @@
                 </Button>
             </Grid>
 
+            <!-- 내용 -->
             <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
                 
+                <Grid Grid.Row="0">
+                    <Label Content="적당히 폴더 찾는 UI"></Label>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Label Content="적당히 찾을 패턴 지정하는 UI"></Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Label Content="적당히 바꿀 패턴 지정하는 UI"></Label>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Label Content="적당히 보여줄 폴더"></Label>
+                </Grid>
             </Grid>
         </Grid>
     </Border>
