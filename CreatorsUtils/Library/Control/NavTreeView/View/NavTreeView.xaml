@@ -35,7 +35,7 @@
               Source="{Binding Path=MyIcon, Mode=OneTime}"
               Stretch="Fill"
               />          
-            <TextBlock Margin="5,0,0,0" Text="{Binding FriendlyName, Mode=OneTime}"/>
+            <TextBlock Margin="5,0,0,0" Text="{Binding FriendlyName, Mode=OneTime}" Foreground="Gainsboro"/>
         </StackPanel>
       </Button>
       
@@ -44,7 +44,7 @@
   
   <TreeView
     BorderThickness="0"
-           
+    Background="#FF323435"
     ItemsSource="{Binding Path=RootChildren}"
     ItemTemplate="{StaticResource NavTreeTempl}" >
         

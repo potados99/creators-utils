@@ -1,4 +1,4 @@
-﻿// RenameViewMOdel.cs
+﻿// RenameViewModel.cs
 // 이 파일은 CreatorsUtils의 일부입니다.
 // 
 // © 2024 Potados <song@potados.com>
