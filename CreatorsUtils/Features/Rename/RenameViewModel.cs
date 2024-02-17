@@ -1,4 +1,4 @@
-﻿// RenameWindow.xaml.cs
+﻿// RenameViewMOdel.cs
 // 이 파일은 CreatorsUtils의 일부입니다.
 // 
 // © 2024 Potados <song@potados.com>
@@ -14,30 +14,12 @@
 // 라이센스 전문은 이 프로그램과 함께 제공되었을 것입니다. 만약 아니라면,
 // 다음 링크에서 받아볼 수 있습니다: <https://www.gnu.org/licenses/gpl-3.0.txt>
 
-using System.Windows;
 using CreatorsUtils.Library.Control.Base;
+using WpfApplication1.ViewModel;
 
 namespace CreatorsUtils.Features.Rename;
 
-public partial class RenameWindow
+public class RenameViewModel : BaseViewModel
 {
-    protected override void OnInitialize()
-    {
-        InitializeComponent();
-    }
-
-    private void OnMinimizeButtonClick(object sender, RoutedEventArgs e)
-    {
-        WindowState = WindowState.Minimized;
-    }
-
-    private void OnCloseButtonClick(object sender, RoutedEventArgs e)
-    {
-        Close();
-    }
-}
-
-public abstract class RenameViewModelWindow : BaseWindow<RenameViewModel>
-{
-    
+    public NavTreeVm SingleTree { get; set; } = new NavTreeVm();
 }

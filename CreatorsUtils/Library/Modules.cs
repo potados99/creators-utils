@@ -16,6 +16,7 @@
 
 using System;
 using CreatorsUtils.Features.Main;
+using CreatorsUtils.Features.Rename;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CreatorsUtils.Library;
@@ -39,7 +40,8 @@ public static class Modules
     {
         // ViewModels
         services
-            .AddTransient<MainViewModel>();
+            .AddTransient<MainViewModel>()
+            .AddTransient<RenameViewModel>();
         
         return services;
     }

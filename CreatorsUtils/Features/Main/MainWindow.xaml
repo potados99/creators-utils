@@ -100,7 +100,7 @@
         </Style>
 
         <Style x:Key="MainButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="LightBlue" />
+            <Setter Property="Background" Value="#333" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -197,14 +197,14 @@
                             </StackPanel.Resources> 
                             
                             <StackPanel Orientation="Vertical">
-                                <Button Width="120" Height="120" Background="#333" Style="{StaticResource MainButtonStyle}" Click="OnRenameButtonClick">
+                                <Button Width="120" Height="120" Style="{StaticResource MainButtonStyle}" Click="OnRenameButtonClick">
                                     <Image Source="pack://siteoforigin:,,/../../Resources/ic_bulk_rename.png" Margin="16"></Image>
                                 </Button>
                                 <Label Content="제목 일괄 변경" Foreground="#BBB" HorizontalAlignment="Center"></Label>
                             </StackPanel>
                             
                             <StackPanel Orientation="Vertical">
-                                <Button Width="120" Height="120" Background="#333" Style="{StaticResource MainButtonStyle}" Click="OnSearchButtonClick">
+                                <Button Width="120" Height="120" Style="{StaticResource MainButtonStyle}" Click="OnSearchButtonClick">
                                     <Image Source="pack://siteoforigin:,,/../../Resources/ic_search_words.png" Margin="16"></Image>
                                 </Button>
                                 <Label Content="단어 일괄 탐색" Foreground="#BBB" HorizontalAlignment="Center"></Label>

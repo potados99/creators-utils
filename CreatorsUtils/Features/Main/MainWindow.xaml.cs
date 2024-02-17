@@ -25,7 +25,7 @@ public partial class MainWindow
 {
     protected override void OnInitialize()
     {
-        
+        InitializeComponent();
     }
 
     private void OnMinimizeButtonClick(object sender, RoutedEventArgs e)
