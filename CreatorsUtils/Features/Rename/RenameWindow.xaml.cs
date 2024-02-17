@@ -24,4 +24,15 @@ public partial class RenameWindow : Window
     {
         InitializeComponent();
     }
+    
+    private void OnMinimizeButtonClick(object sender, RoutedEventArgs e)
+    {
+        WindowState = WindowState.Minimized;
+    }
+
+    private void OnCloseButtonClick(object sender, RoutedEventArgs e)
+    {
+        Close();
+    }
+
 }
