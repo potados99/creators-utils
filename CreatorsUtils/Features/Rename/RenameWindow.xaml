@@ -116,19 +116,73 @@
             </Setter>
         </Style>
 
-        <Style x:Key="GridViewColumnHeaderStyle1" TargetType="{x:Type GridViewColumnHeader}">
+        <Style x:Key="GridViewColumnHeaderGripper"
+               TargetType="Thumb">
+            <Setter Property="Width"
+                    Value="18" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0"
+                                         EndPoint="0,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStopCollection>
+                                <GradientStop Color="{DynamicResource BorderLightColor}"
+                                              Offset="0.0" />
+                                <GradientStop Color="{DynamicResource BorderDarkColor}"
+                                              Offset="1.0" />
+                            </GradientStopCollection>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
-                        <Border BorderThickness="0,0,0.5,0.5" Padding="0 0 0 4" BorderBrush="Gray" Background="Transparent">
-                            <TextBlock x:Name="ContentHeader" Foreground="Gainsboro" Text="{TemplateBinding Content}"
-                                       Padding="5,5,5,0" Width="{TemplateBinding Width}" TextAlignment="Center" />
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border Padding="{TemplateBinding Padding}"
+                                Background="Transparent">
+                            <Rectangle HorizontalAlignment="Center"
+                                       Width="1"
+                                       Fill="{TemplateBinding Background}" />
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="FontSize" Value="12" />
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1"
+                                         StartPoint="0.5,0">
+                        <GradientStop Color="Black"
+                                      Offset="0" />
+                        <GradientStop Color="White"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="CustomGridViewColumnHeader" TargetType="{x:Type GridViewColumnHeader}" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                        <Grid>
+                            <!-- My Custom Template -->
+                            <Border Background="#323435">
+                                <TextBlock Text="{TemplateBinding Content}" Foreground="White"  Margin="4,0,0,0" Padding="0,2" />
+                            </Border>
+
+                            <!-- The gripper / header resizer -->
+                            <Thumb x:Name="PART_HeaderGripper"
+                                   HorizontalAlignment="Right"
+                                   Margin="0,0,-9,0"
+                                   Style="{StaticResource GridViewColumnHeaderGripper}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Other properties you want to change ... -->
+            <Setter Property="IsHitTestVisible" Value="True"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
         </Style>
     </Window.Resources>
 
@@ -226,7 +280,7 @@
                             </ListView.ItemContainerStyle>
 
                             <ListView.View>
-                                <GridView ColumnHeaderContainerStyle="{StaticResource GridViewColumnHeaderStyle1}">
+                                <GridView ColumnHeaderContainerStyle="{StaticResource CustomGridViewColumnHeader}">
                                     <GridViewColumn Header="기존 이름" DisplayMemberBinding="{Binding OldName}" />
                                     <GridViewColumn Header="새 이름" DisplayMemberBinding="{Binding NewName}" />
                                 </GridView>
