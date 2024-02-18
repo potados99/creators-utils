@@ -1,12 +1,9 @@
-﻿using System.Windows.Media.Imaging;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using MVVM;
+using System.Windows.Media.Imaging;
+using CreatorsUtils.Library.Control.NavTreeView.MVVM;
 
-namespace WpfApplication1.Model
+namespace CreatorsUtils.Library.Control.NavTreeView.Model
 {
     // Model of tree items: NavTreeItem
 

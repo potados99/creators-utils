@@ -1,9 +1,9 @@
-﻿using System.Windows.Media.Imaging;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Windows.Media.Imaging;
 
-namespace WpfApplication1.Model
+namespace CreatorsUtils.Library.Control.NavTreeView.Model
 {
     // Definition of several NavTreeItem classes (constructor, GetMyIcion and GetMyChildren) from abstact class NavTreeItem 
     // Note that this file can be split/refactored in smaller parts

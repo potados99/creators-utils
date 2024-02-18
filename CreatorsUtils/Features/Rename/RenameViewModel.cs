@@ -16,7 +16,7 @@
 
 using System.Collections.Generic;
 using CreatorsUtils.Library.Control.Base;
-using WpfApplication1.ViewModel;
+using CreatorsUtils.Library.Control.NavTreeView.ViewModel;
 
 namespace CreatorsUtils.Features.Rename;
 

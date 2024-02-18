@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 // Where did I get this sample?
 // For almost same code see http://www.leghumped.com/blog/2008/03/23/retrieving-shell-icons-in-c/
@@ -13,7 +13,7 @@ using System.Drawing;
 /// either GetSmallIcon(string fileName) or GetLargeIcon(string fileName)
 /// </summary>
 /// 
-namespace Utils
+namespace CreatorsUtils.Library.Control.NavTreeView.Utils
 {
     public class ShellIcon
     {

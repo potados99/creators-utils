@@ -1,10 +1,6 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Windows.Media.Imaging;
+﻿using System.IO;
 
-namespace WpfApplication1.Model
+namespace CreatorsUtils.Library.Control.NavTreeView.Model
 {
     public static class FolderPlaneUtils
     {

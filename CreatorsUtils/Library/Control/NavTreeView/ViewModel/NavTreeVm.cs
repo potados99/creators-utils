@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using WpfApplication1.Model;
 using System.Collections.ObjectModel;
-using MVVM;
-using System.Windows.Input;
+using CreatorsUtils.Library.Control.NavTreeView.Model;
+using CreatorsUtils.Library.Control.NavTreeView.MVVM;
 
-namespace WpfApplication1.ViewModel
+namespace CreatorsUtils.Library.Control.NavTreeView.ViewModel
 {
     // qq properties for demo one tree
 

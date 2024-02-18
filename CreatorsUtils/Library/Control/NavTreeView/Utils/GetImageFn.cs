@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Text;
+using System.Collections.Generic;
 using System.IO;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Drawing;
-using System.Collections.Generic;     // add to references
+
+// add to references
 
 // Note this procedure can be used as part of code that: 
 // - does some tests on filename so that in specific cases specific icons can be used
 // - uses a dictionairy for extensions
 
-namespace Utils
+namespace CreatorsUtils.Library.Control.NavTreeView.Utils
 {
     // ImageCache for some speed
     public static class ImageCache

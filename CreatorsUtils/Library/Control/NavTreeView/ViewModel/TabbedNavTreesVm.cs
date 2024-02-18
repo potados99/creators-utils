@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MVVM;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using WpfApplication1.Model;
+using System.Linq;
+using CreatorsUtils.Library.Control.NavTreeView.Model;
+using CreatorsUtils.Library.Control.NavTreeView.MVVM;
 
-namespace WpfApplication1.ViewModel
+namespace CreatorsUtils.Library.Control.NavTreeView.ViewModel
 {
     public class TabbedNavTreesVm : ViewModelBase
     {

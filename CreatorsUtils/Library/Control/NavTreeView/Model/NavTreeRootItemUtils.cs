@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace WpfApplication1.Model
+namespace CreatorsUtils.Library.Control.NavTreeView.Model
 {
     public static class NavTreeRootItemUtils
     {

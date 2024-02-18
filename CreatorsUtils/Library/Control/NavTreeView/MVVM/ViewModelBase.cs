@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace MVVM
+namespace CreatorsUtils.Library.Control.NavTreeView.MVVM
 {
     // Note on use of INotify: 
 

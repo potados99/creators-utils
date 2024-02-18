@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Media.Imaging;
 
-namespace WpfApplication1.Model
+namespace CreatorsUtils.Library.Control.NavTreeView.Model
 {
     // General note: Manipulation of the Tree is straightforward in MODEL or VIEWMODEL and all kind of functions 
     // can be implemented such as GetParent, AddChild, AddUniqueChild, RemoveChild, SortChildren etc.

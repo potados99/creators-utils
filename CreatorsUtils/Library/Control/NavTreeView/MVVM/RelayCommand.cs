@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Input;
 using System.Diagnostics;
+using System.Windows.Input;
 
 // A note on ViewModel, Commands and RelayCommand
 
@@ -39,7 +36,7 @@ using System.Diagnostics;
         //    </i:Interaction.Triggers>
         //</Rectangle>
 
-namespace MVVM
+namespace CreatorsUtils.Library.Control.NavTreeView.MVVM
 {
     //  Source: Josh Smith in WPF Apps With The Model-View-ViewModel Design Pattern, 
     //  http://msdn.microsoft.com/en-us/magazine/dd419663.aspx
