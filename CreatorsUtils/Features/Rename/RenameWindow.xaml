@@ -246,7 +246,7 @@
                         <ColumnDefinition Width="5*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="0" BorderThickness="0.5" BorderBrush="Gray" CornerRadius="4" Margin="4">
-                        <view:NavTreeView DataContext="{Binding SingleTree}" />
+                        <view:TabbedNavTreesView DataContext="{Binding TabbedNavTrees}" />
                     </Border>
                     <Border Grid.Column="1" BorderThickness="0.5" BorderBrush="Gray" CornerRadius="4" Margin="4">
                         <ListView ItemsSource="{Binding DirectoryItems}" Background="Transparent" BorderThickness="0">

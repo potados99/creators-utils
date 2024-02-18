@@ -22,7 +22,18 @@ namespace CreatorsUtils.Features.Rename;
 
 public class RenameViewModel : BaseViewModel
 {
-    public NavTreeVm SingleTree { get; set; } = new NavTreeVm();
-    
-    public List<DirectoryItem> DirectoryItems { get; set; } = new() { new DirectoryItem {OldName = "hello.txt", NewName = "world.txt"}, new DirectoryItem {OldName = "add.txt", NewName = "bcbc.txt"} }; 
+    public override void OnInitialize()
+    {
+        base.OnInitialize();
+        
+        TabbedNavTrees.SelectedNavTree = TabbedNavTrees.NavTrees[0];
+    }
+
+    public TabbedNavTreesVm TabbedNavTrees { get; set; } = new TabbedNavTreesVm();
+
+    public List<DirectoryItem> DirectoryItems { get; set; } = new()
+    {
+        new DirectoryItem {OldName = "hello.txt", NewName = "world.txt"},
+        new DirectoryItem {OldName = "add.txt", NewName = "bcbc.txt"}
+    };
 }
