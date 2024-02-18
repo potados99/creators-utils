@@ -24,5 +24,5 @@ public class RenameViewModel : BaseViewModel
 {
     public NavTreeVm SingleTree { get; set; } = new NavTreeVm();
     
-    public List<DirectoryItem> DirectoryItems { get; set; } = new() { new DirectoryItem {OldName = "hello.txt", NewName = "world.txt"} }; 
+    public List<DirectoryItem> DirectoryItems { get; set; } = new() { new DirectoryItem {OldName = "hello.txt", NewName = "world.txt"}, new DirectoryItem {OldName = "add.txt", NewName = "bcbc.txt"} }; 
 }
